@@ -1,0 +1,47 @@
+// console.log('sup, hoe');
+
+const player = function (){
+    let choice = prompt('Rock, Paper, Scissors?: ').toLowerCase();
+    return choice;
+}
+
+function computerPlay(){
+    let play = Math.floor((Math.random() * 100) + 1);
+    // console.log(play);
+    if (play <= 33){
+        return 'rock';
+    } else if (play > 33 && play < 66) {
+        return'paper';
+    } else if (play > 66) {
+        return 'scissors';
+    }
+}
+
+const runGame = function (computerChoice, playerChoice){
+    let result = '';
+    if (computerChoice === 'rock' && playerChoice === 'scissor'){
+        result = `I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
+        console.log(result);
+    } else if (computerChoice === 'rock' && playerChoice === 'paper'){
+        result =`I lost!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
+        console.log(result);
+    }  else if (computerChoice === 'paper' && playerChoice === 'rock'){
+        result = `I win, :)!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
+        console.log(result);
+    } else if (computerChoice === 'paper' && playerChoice === 'scissors'){
+        result = `I lost, :|!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
+        console.log(result);
+    } else if (computerChoice === 'scissors' && playerChoice === 'paper'){
+        result = `Hah! I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
+        console.log(result);
+    } else if (computerChoice === 'scissors' && playerChoice === 'rock'){
+        result = `:[\nhmmmmm\nI chose: ${computerChoice} and you chose: ${playerChoice}\nSo I lost!`;
+        console.log(result);
+    } else if (computerChoice === playerChoice){
+        result = `I chose ${computerChoice} and you chose: ${playerChoice}.\nIt's a tie!`;
+        console.log(result);
+    }
+}
+
+// console.log(`I picked ${computerPlay()}`)
+runGame(computerPlay(), player());
