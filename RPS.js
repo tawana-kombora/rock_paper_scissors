@@ -1,7 +1,7 @@
 // console.log('sup, hoe');
 
 const player = function (){
-    let choice = prompt('Rock, Paper, Scissors?: ').toLowerCase();
+    let choice = prompt('Rock, Paper, Scissors? ').toLowerCase();
     return choice;
 }
 
@@ -19,7 +19,7 @@ function computerPlay(){
 
 const runGame = function (computerChoice, playerChoice){
     let result = '';
-    if (computerChoice === 'rock' && playerChoice === 'scissor'){
+    if (computerChoice === 'rock' && playerChoice === 'scissors'){
         result = `I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
         console.log(result);
     } else if (computerChoice === 'rock' && playerChoice === 'paper'){
@@ -35,10 +35,10 @@ const runGame = function (computerChoice, playerChoice){
         result = `Hah! I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
         console.log(result);
     } else if (computerChoice === 'scissors' && playerChoice === 'rock'){
-        result = `:[\nhmmmmm\nI chose: ${computerChoice} and you chose: ${playerChoice}\nSo I lost!`;
+        result = `:[\nhmmmmm\nSo I lost! because I chose: ${computerChoice} and you chose: ${playerChoice}`;
         console.log(result);
     } else if (computerChoice === playerChoice){
-        result = `I chose ${computerChoice} and you chose: ${playerChoice}.\nIt's a tie!`;
+        result = `It's a tie!\nI chose ${computerChoice} and you chose: ${playerChoice}.`;
         console.log(result);
     }
 }
