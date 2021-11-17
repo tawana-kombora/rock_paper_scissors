@@ -20,28 +20,42 @@ function computerPlay(){
 function playRound(computerSelection, playerSelection  ){
     let result = '';
     if (computerSelection === 'rock' && playerSelection === 'scissors'){
-        result = `I win!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        result = `I win!\n${computerSelection} beats ${playerSelection}`;
         return result;
     } else if (computerSelection === 'rock' && playerSelection === 'paper'){
-        result =`I lost!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        result =`I lost!\n${playerSelection} beats ${computerSelection}`;
         return result;
     }  else if (computerSelection === 'paper' && playerSelection  === 'rock'){
-        result = `I win, :)!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        result = `I win, :)\n${computerSelection} beats ${playerSelection}`;
         return result;
     } else if (computerSelection === 'paper' && playerSelection  === 'scissors'){
-        result = `I lost, :|!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        result = `I lost, :|\n${playerSelection} beats ${computerSelection}`;
         return result;
     } else if (computerSelection === 'scissors' && playerSelection  === 'paper'){
-        result = `Hah! I win!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        result = `Hah! I win!\n${computerSelection} beats ${playerSelection}`;
         return result;
     } else if (computerSelection === 'scissors' && playerSelection  === 'rock'){
-        result = `hmmmmm\nSo I lost! because I chose: ${computerSelection} and you chose: ${playerSelection}`;
+        result = `I lost!\n${playerSelection} beats ${computerSelection}`;
         return result;
     } else if (computerSelection === playerSelection){
-        result = `It's a tie!\nI chose ${computerSelection} and you chose: ${playerSelection}.`;
+        result = `It's a tie!\n${computerSelection} doesn't beat ${playerSelection}`;
         return result;
     }
 }
 
+function game(){
+    let scoreOne = playRound(computerPlay(), playerSelection())
+    console.log(`Round 1: \n${scoreOne}`);
+    let scoreTwo = playRound(computerPlay(), playerSelection())
+    console.log(`Round 2: \n${scoreTwo}`);
+    let scoreThree = playRound(computerPlay(), playerSelection())
+    console.log(`Round 3: \n${scoreThree}`);
+    let scoreFour = playRound(computerPlay(), playerSelection())
+    console.log(`Round 4: \n${scoreFour}`);
+    let scoreFive = playRound(computerPlay(), playerSelection());
+    console.log(`Round 5: \n${scoreFive}`);
+
+}
+game();
 // console.log(`I picked ${computerPlay()}`)
-console.log(playRound(computerPlay(), playerSelection()));
+// console.log(playRound(computerPlay(), playerSelection()));
