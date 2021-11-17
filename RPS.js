@@ -1,6 +1,6 @@
 // console.log('sup, hoe');
 
-const player = function (){
+const playerSelection = function (){
     let choice = prompt('Rock, Paper, Scissors? ').toLowerCase();
     return choice;
 }
@@ -17,31 +17,31 @@ function computerPlay(){
     }
 }
 
-const runGame = function (computerChoice, playerChoice){
+function playRound(computerSelection, playerSelection  ){
     let result = '';
-    if (computerChoice === 'rock' && playerChoice === 'scissors'){
-        result = `I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    } else if (computerChoice === 'rock' && playerChoice === 'paper'){
-        result =`I lost!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    }  else if (computerChoice === 'paper' && playerChoice === 'rock'){
-        result = `I win, :)!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    } else if (computerChoice === 'paper' && playerChoice === 'scissors'){
-        result = `I lost, :|!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    } else if (computerChoice === 'scissors' && playerChoice === 'paper'){
-        result = `Hah! I win!\nI chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    } else if (computerChoice === 'scissors' && playerChoice === 'rock'){
-        result = `:[\nhmmmmm\nSo I lost! because I chose: ${computerChoice} and you chose: ${playerChoice}`;
-        console.log(result);
-    } else if (computerChoice === playerChoice){
-        result = `It's a tie!\nI chose ${computerChoice} and you chose: ${playerChoice}.`;
-        console.log(result);
+    if (computerSelection === 'rock' && playerSelection === 'scissors'){
+        result = `I win!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        return result;
+    } else if (computerSelection === 'rock' && playerSelection === 'paper'){
+        result =`I lost!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        return result;
+    }  else if (computerSelection === 'paper' && playerSelection  === 'rock'){
+        result = `I win, :)!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        return result;
+    } else if (computerSelection === 'paper' && playerSelection  === 'scissors'){
+        result = `I lost, :|!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        return result;
+    } else if (computerSelection === 'scissors' && playerSelection  === 'paper'){
+        result = `Hah! I win!\nI chose: ${computerSelection} and you chose: ${playerSelection  }`;
+        return result;
+    } else if (computerSelection === 'scissors' && playerSelection  === 'rock'){
+        result = `hmmmmm\nSo I lost! because I chose: ${computerSelection} and you chose: ${playerSelection}`;
+        return result;
+    } else if (computerSelection === playerSelection){
+        result = `It's a tie!\nI chose ${computerSelection} and you chose: ${playerSelection}.`;
+        return result;
     }
 }
 
 // console.log(`I picked ${computerPlay()}`)
-runGame(computerPlay(), player());
+console.log(playRound(computerPlay(), playerSelection()));
