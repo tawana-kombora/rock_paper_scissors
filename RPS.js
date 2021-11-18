@@ -43,7 +43,7 @@ function playRound(computerSelection, playerSelection  ){
     }
 }
 
-function game(){
+function playGame(){
     let scoreOne = playRound(computerPlay(), playerSelection())
     console.log(`Round 1: \n${scoreOne}`);
     let scoreTwo = playRound(computerPlay(), playerSelection())
@@ -56,6 +56,6 @@ function game(){
     console.log(`Round 5: \n${scoreFive}`);
 
 }
-game();
+playGame();
 // console.log(`I picked ${computerPlay()}`)
 // console.log(playRound(computerPlay(), playerSelection()));
